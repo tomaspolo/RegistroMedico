@@ -19,23 +19,5 @@
     		<b>direccion</b>
     	</field>
   	</mapping>
- <!-- 
-  	<mapping> 
-    	<class-a>com.sinensia.productosboot.backend.integration.model.DireccionPL</class-a>
-    	<class-b>com.sinensia.productosboot.backend.business.model.Direccion</class-b>
-  	</mapping>
- -->
-  	<mapping> 
-    	<class-a>com.sinensia.productosboot.backend.integration.model.EnvioPL</class-a>
-    	<class-b>com.sinensia.productosboot.backend.business.model.Envio</class-b>
-    	<field>
-    		<a>almacenPL</a>
-    		<b>almacen</b>
-    	</field>
-    	<field>
-    		<a>direccionPL</a>
-    		<b>direccion</b>
-    	</field>
-  	</mapping>
   	
 </mappings>
