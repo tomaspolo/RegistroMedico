@@ -7,17 +7,13 @@
     <!-- Integration TO Business -->
  	  
   	<mapping> 
-    	<class-a>com.sinensia.productosboot.backend.integration.model.ProductoPL</class-a>
-    	<class-b>com.sinensia.productosboot.backend.business.model.Producto</class-b>
+    	<class-a>com.viewnext.registrosmedicos.integration.model.UsuarioPL</class-a>
+    	<class-b>com.viewnext.registrosmedicos.bussines.model.Usuario</class-b>
   	</mapping>
   	
   	<mapping> 
-    	<class-a>com.sinensia.productosboot.backend.integration.model.AlmacenPL</class-a>
-    	<class-b>com.sinensia.productosboot.backend.business.model.Almacen</class-b>
-    	<field>
-    		<a>direccionPL</a>
-    		<b>direccion</b>
-    	</field>
+    	<class-a>com.viewnext.registrosmedicos.integration.model.RegistroPL</class-a>
+    	<class-b>com.viewnext.registrosmedicos.bussines.model.Registro</class-b>
   	</mapping>
   	
 </mappings>
