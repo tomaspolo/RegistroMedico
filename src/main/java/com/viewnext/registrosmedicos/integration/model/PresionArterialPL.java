@@ -1,5 +1,8 @@
 package com.viewnext.registrosmedicos.integration.model;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class PresionArterialPL {
 	
 	private double presionMin;

@@ -1,18 +1,39 @@
 package com.viewnext.registrosmedicos.integration.model;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+
+@Entity
+@Table(name="USUARIOS")
 public class UsuarioPL {
-
+	
+	@Id
 	private String dni;
+	
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
+	
+	@Enumerated(EnumType.STRING)
 	private SexoPL sexo;
+	
+	@Temporal(TemporalType.DATE)
 	private Date fechaNacimiento;
 	private double altura;
 	private String observaciones;
 	
+	@OneToMany
+	private List<RegistroPL> registros;
 	public UsuarioPL() {
 		
 	}

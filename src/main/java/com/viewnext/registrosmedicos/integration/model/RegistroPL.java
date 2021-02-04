@@ -2,12 +2,30 @@ package com.viewnext.registrosmedicos.integration.model;
 
 import java.util.Date;
 
-public class RegistroPL {
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+
+@Entity
+@Table(name="USUARIOS")
+public class RegistroPL {
+	
+	@Id
 	private long codigo;
+	
+	@Temporal(TemporalType.DATE)
+	
 	private Date fechaRegistro;
+	@Embedded
 	private GeolocalizacionPL geolocalizacion;
 	private double peso;
+	
+	@Embedded
 	private PresionArterialPL presionArterial;
 	private int numeroPasos;
 	
