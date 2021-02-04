@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.dozer.DozerBeanMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.viewnext.registrosmedicos.bussines.model.Usuario;
@@ -15,8 +16,10 @@ import com.viewnext.registrosmedicos.integration.repositories.UsuarioPLRepositor
 @Service
 public class UsuarioServicesImpl implements UsuarioServices{
 
+	@Autowired
 	private UsuarioPLRepository usuarioPLRepository;
 	
+	@Autowired
 	private DozerBeanMapper dozerBeanMapper;
 	
 	@Override

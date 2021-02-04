@@ -1,4 +1,4 @@
-package com.viewnext.config;
+package com.viewnext.registrosmedicos.config;
 
 import java.util.Arrays;
 import java.util.List;

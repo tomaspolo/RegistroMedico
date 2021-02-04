@@ -28,7 +28,7 @@ public class UsuarioPL {
 	@Enumerated(EnumType.STRING)
 	private SexoPL sexo;
 	
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaNacimiento;
 	private double altura;
 	private String observaciones;
