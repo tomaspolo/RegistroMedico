@@ -1,27 +1,57 @@
 package com.viewnext.registrosmedicos.bussines.services.impl;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
+import org.dozer.DozerBeanMapper;
 
 import com.viewnext.registrosmedicos.bussines.model.Usuario;
 import com.viewnext.registrosmedicos.bussines.services.UsuarioServices;
+import com.viewnext.registrosmedicos.integration.model.UsuarioPL;
+import com.viewnext.registrosmedicos.integration.repositories.UsuarioPLRepository;
 
 public class UsuarioServicesImpl implements UsuarioServices{
 
+	private UsuarioPLRepository usuarioPLRepository;
+	
+	private DozerBeanMapper dozerBeanMapper;
+	
 	@Override
 	public List<Usuario> getAll() {
 		
-		return null;
+		List<UsuarioPL> usuariosPL = usuarioPLRepository.findAll();
+		
+		List<Usuario> usuarios = new ArrayList<Usuario>();
+		
+		for (UsuarioPL usuarioPL : usuariosPL) {
+			
+			usuarios.add(dozerBeanMapper.map(usuarioPL, Usuario.class));
+			
+		}
+		
+		return usuarios;
 	}
 	
 	@Override
 	public Usuario read(String DNI) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Optional<UsuarioPL> usuarioOptional = usuarioPLRepository.findById(DNI);
+		
+		UsuarioPL usuarioPL = usuarioOptional.orElse(null);
+		
+		Usuario usuario = dozerBeanMapper.map(usuarioPL, Usuario.class);
+		
+		return usuario;
 	}
 
 	@Override
 	public Usuario save(Usuario usuario) {
 		
-		return null;
+		UsuarioPL usuarioPL = usuarioPLRepository.save(dozerBeanMapper.map(usuario, UsuarioPL.class));
+		
+		Usuario createdUsuario = dozerBeanMapper.map(usuarioPL, Usuario.class);
+		
+		return createdUsuario;
 	}
 }

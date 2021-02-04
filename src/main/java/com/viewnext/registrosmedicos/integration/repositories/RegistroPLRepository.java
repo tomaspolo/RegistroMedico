@@ -2,8 +2,8 @@ package com.viewnext.registrosmedicos.integration.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.viewnext.registrosmedicos.bussines.model.Registro;
+import com.viewnext.registrosmedicos.integration.model.RegistroPL;
 
-public interface RegistroRepository extends JpaRepository<Registro, Integer>{
+public interface RegistroPLRepository extends JpaRepository<RegistroPL, Integer>{
 
 }

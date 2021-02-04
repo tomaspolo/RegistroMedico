@@ -10,7 +10,7 @@ public interface RegistroServices {
 	
 	public Registro read(int codigo);
 	
-	public Registro save();
+	public Registro save(Registro registro);
 	
 	
 	
