@@ -1,4 +1,4 @@
-package com.viewnext.RegistrosMedicos.bussines.model;
+package com.viewnext.registrosmedicos.bussines.model;
 
 public enum Sexo {
 
