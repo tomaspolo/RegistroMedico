@@ -1,4 +1,4 @@
-package com.viewnext.RegistrosMedicos.integration.model;
+package com.viewnext.registrosmedicos.integration.model;
 
 public enum SexoPL {
 
