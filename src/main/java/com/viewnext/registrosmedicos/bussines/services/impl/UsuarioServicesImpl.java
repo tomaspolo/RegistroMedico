@@ -5,12 +5,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.dozer.DozerBeanMapper;
+import org.springframework.stereotype.Service;
 
 import com.viewnext.registrosmedicos.bussines.model.Usuario;
 import com.viewnext.registrosmedicos.bussines.services.UsuarioServices;
 import com.viewnext.registrosmedicos.integration.model.UsuarioPL;
 import com.viewnext.registrosmedicos.integration.repositories.UsuarioPLRepository;
 
+@Service
 public class UsuarioServicesImpl implements UsuarioServices{
 
 	private UsuarioPLRepository usuarioPLRepository;

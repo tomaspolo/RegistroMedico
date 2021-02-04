@@ -5,12 +5,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.dozer.DozerBeanMapper;
+import org.springframework.stereotype.Service;
 
 import com.viewnext.registrosmedicos.bussines.model.Registro;
 import com.viewnext.registrosmedicos.bussines.services.RegistroServices;
 import com.viewnext.registrosmedicos.integration.model.RegistroPL;
 import com.viewnext.registrosmedicos.integration.repositories.RegistroPLRepository;
 
+@Service
 public class RegistroServicesImpl implements RegistroServices{
 
 	private RegistroPLRepository registroPLRepository;
