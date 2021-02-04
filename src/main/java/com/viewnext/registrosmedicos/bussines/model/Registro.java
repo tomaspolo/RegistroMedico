@@ -4,20 +4,21 @@ import java.util.Date;
 
 public class Registro {
 
-	private String codigo;
+	private long codigo;
 	private Date fechaRegistro;
 	private Geolocalizacion geolocalizacion;
 	private double peso;
 	private PresionArterial presionArterial;
-	private int numeroPasos;
+	private int numeroPasos;	
+	private Usuario usuario;
 	
 	public Registro() {}
 	
-	public String getCodigo() {
+	public long getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(String codigo) {
+	public void setCodigo(long codigo) {
 		this.codigo = codigo;
 	}
 
@@ -52,6 +53,14 @@ public class Registro {
 	}
 	public void setNumeroPasos(int numeroPasos) {
 		this.numeroPasos = numeroPasos;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	@Override

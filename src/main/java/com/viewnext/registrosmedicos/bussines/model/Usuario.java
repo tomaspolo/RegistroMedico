@@ -1,7 +1,7 @@
 package com.viewnext.registrosmedicos.bussines.model;
 
 import java.util.Date;
-import java.util.List;
+
 
 public class Usuario {
 
@@ -14,7 +14,6 @@ public class Usuario {
 	private double altura;
 	private String observaciones;
 	
-	private List<Registro> registros;
 	
 	public Usuario() {
 		
@@ -83,14 +82,6 @@ public class Usuario {
 	
 	public void setObservaciones(String observaciones) {
 		this.observaciones = observaciones;
-	}
-	
-	public List<Registro> getRegistros() {
-		return registros;
-	}
-
-	public void setRegistros(List<Registro> registros) {
-		this.registros = registros;
 	}
 
 

@@ -4,10 +4,16 @@ import java.util.Date;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 
 
 @Entity
@@ -15,7 +21,15 @@ import javax.persistence.TemporalType;
 public class RegistroPL {
 	
 	@Id
-	private String codigo;
+	@TableGenerator(name = "GENERADOR_REGISTROS",
+	table = "SECUENCIAS",
+	pkColumnName = "NOMBRE_SECUENCIA",
+	pkColumnValue = "SEQ_REGISTROS",
+	valueColumnName = "VALOR_SECUENCIA",
+	allocationSize = 1)
+
+@GeneratedValue(strategy = GenerationType.TABLE, generator = "GENERADOR_REGISTROS")
+	private long codigo;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaRegistro;
@@ -30,13 +44,17 @@ public class RegistroPL {
 	
 	private int numeroPasos;
 	
+	@ManyToOne
+	@JoinColumn(name="DNI_USUARIO")
+	private UsuarioPL usuario;
+	
 	public RegistroPL() {}
 	
-	public String getCodigo() {
+	public long getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(String codigo) {
+	public void setCodigo(long codigo) {
 		this.codigo = codigo;
 	}
 	
@@ -80,7 +98,15 @@ public class RegistroPL {
 		this.numeroPasos = numeroPasos;
 	}
 	
-	
+
+	public UsuarioPL getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(UsuarioPL usuario) {
+		this.usuario = usuario;
+	}
+
 	@Override
 	public String toString() {
 		return "Registro [codigo=" + codigo + ", fechaRegistro=" + fechaRegistro + ", geolocalizacion="
