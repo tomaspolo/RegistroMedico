@@ -1,5 +1,6 @@
 package com.viewnext.registrosmedicos.bussines.services;
 
+
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -11,10 +12,9 @@ public interface RegistroServices {
 
 	public List<Registro> getAll();
 	
-	public Registro read(int codigo);
+	public Registro read(long codigo);
 	
 	public Registro save(Registro registro);
-	
-	
+
 	
 }

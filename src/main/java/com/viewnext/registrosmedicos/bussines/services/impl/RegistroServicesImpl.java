@@ -1,6 +1,7 @@
 package com.viewnext.registrosmedicos.bussines.services.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,7 +40,7 @@ public class RegistroServicesImpl implements RegistroServices{
 	}
 
 	@Override
-	public Registro read(int codigo) {
+	public Registro read(long codigo) {
 		
 		Optional<RegistroPL> registroOptional = registroPLRepository.findById(codigo);
 		
@@ -59,5 +60,7 @@ public class RegistroServicesImpl implements RegistroServices{
 		
 		return createdRegistro;
 	}
+
+
 
 }

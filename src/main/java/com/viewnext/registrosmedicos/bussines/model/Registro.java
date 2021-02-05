@@ -13,7 +13,7 @@ public class Registro {
 	private Usuario usuario;
 	
 	public Registro() {}
-	
+	 
 	public long getCodigo() {
 		return codigo;
 	}
