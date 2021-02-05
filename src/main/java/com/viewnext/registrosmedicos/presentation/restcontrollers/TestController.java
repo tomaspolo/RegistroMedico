@@ -1,13 +1,19 @@
 package com.viewnext.registrosmedicos.presentation.restcontrollers;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.viewnext.registrosmedicos.bussines.model.Usuario;
+import com.viewnext.registrosmedicos.integration.model.PresionArterialPL;
 import com.viewnext.registrosmedicos.integration.repositories.RegistroPLRepository;
 import com.viewnext.registrosmedicos.integration.repositories.UsuarioPLRepository;
 
@@ -22,21 +28,30 @@ public class TestController {
 	@Autowired
 	private RegistroPLRepository registroPLRepository;
 	
-	
-	public double getTensionMedia() {
-		return 0;
+	@GetMapping("/{dni}/peso-medio")
+	public double getPesoMedio(@PathVariable String dni, @RequestParam int mes, @RequestParam int ano) {
+		return usuarioPLRepository.getPesoMedio(dni, mes, ano);
 	}
 	
-	public double getPesoMedio() {
-		return 0;
+	@GetMapping("/{dni}/peso-medio-meses")
+	public List<Double> getPesoMedioPorMeses(@PathVariable String dni, @RequestParam int ano) {
+		return usuarioPLRepository.getPesoMedioPorMeses(dni, ano);
 	}
 	
-	public List<Double> getPesoMedioPorMeses() {
-		return null;
+	@GetMapping("/{dni}/tension-media")
+	public PresionArterialPL getTensionMedia(@PathVariable String dni, @RequestParam int mes, @RequestParam int ano) {
+
+		return usuarioPLRepository.getMediaPorAnyoMes(dni, mes, ano);
+		
 	}
 	
-	public int getDiasDiferenciaPresion() {
-		return 0;
+	@GetMapping("/problema1")
+	public Object getDiasDiferenciaPresion(/*String dni, Date fechaInicio, Date fechaFin*/ ) {
+		String dni = "777777A";
+		Date fecha1 = new Date(0);
+		Date fecha2 = new Date();
+	
+		return usuarioPLRepository.getDiasDiferenciaPresion(dni, fecha1, fecha2);
 	}
 	
 	public double getDiferenciaPesoEntre() {

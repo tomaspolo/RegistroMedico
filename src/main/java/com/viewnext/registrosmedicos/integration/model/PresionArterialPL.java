@@ -4,11 +4,17 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class PresionArterialPL {
-	
+
 	private double presionMin;
 	private double presionMax;
-	
-	public PresionArterialPL() {}
+
+	public PresionArterialPL() {
+	}
+
+	public PresionArterialPL(double presionMin, double presionMax) {
+		this.presionMin = presionMin;
+		this.presionMax = presionMax;
+	}
 
 	public double getPresionMin() {
 		return presionMin;
@@ -30,7 +36,5 @@ public class PresionArterialPL {
 	public String toString() {
 		return "PresionArterial [presionMin=" + presionMin + ", presionMax=" + presionMax + "]";
 	}
-	
-	
-	
+
 }
